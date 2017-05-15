@@ -1,5 +1,7 @@
 <?php
 
+// Get token from increment service
+
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, "https://spring-boot-rest-app-167308.appspot.com/oauth/token");
@@ -28,6 +30,7 @@ $token = $result->access_token;
 
 //------------------------------------------------------------------------------------------------
 
+// get counter from increment service
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, "https://spring-boot-rest-app-167308.appspot.com/counter");
@@ -47,6 +50,8 @@ if (curl_errno($ch)) {
 curl_close ($ch);
 
 //----------------------------------------------------------------------------------------------------
+
+// send counter to spring-boot-client-app
 
 $ch = curl_init();
 
